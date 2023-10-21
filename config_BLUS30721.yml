@@ -15,17 +15,17 @@ Core:
   SPU GETLLAR Busy Waiting Percentage: 100
   SPU Debug: false
   MFC Debug: false
-  Preferred SPU Threads: 0
+  Preferred SPU Threads: 4
   SPU delay penalty: 3
-  SPU loop detection: false
+  SPU loop detection: true
   Max SPURS Threads: 6
   SPU Block Size: Mega
   Accurate GETLLAR: false
   Accurate SPU DMA: false
   Accurate SPU Reservations: true
   Accurate Cache Line Stores: false
-  Accurate RSX reservation access: true
-  RSX FIFO Accuracy: Atomic
+  Accurate RSX reservation access: false
+  RSX FIFO Accuracy: Fast
   SPU Verification: true
   SPU Cache: true
   SPU Profiler: false
@@ -76,9 +76,9 @@ Video:
   Frame limit: Auto
   Second Frame Limit: 0
   MSAA: Auto
-  Shader Mode: Async Shader Recompiler
+  Shader Mode: Async with Shader Interpreter
   Shader Precision: High
-  Write Color Buffers: true
+  Write Color Buffers: false
   Write Depth Buffer: false
   Read Color Buffers: false
   Read Depth Buffer: false
@@ -92,7 +92,7 @@ Video:
   Stretch To Display Area: false
   Force High Precision Z buffer: false
   Strict Rendering Mode: false
-  Disable ZCull Occlusion Queries: true
+  Disable ZCull Occlusion Queries: false
   Disable Video Output: false
   Disable Vertex Cache: false
   Disable FIFO Reordering: false
@@ -102,7 +102,7 @@ Video:
   Disable Vulkan Memory Allocator: false
   Use full RGB output range: true
   Strict Texture Flushing: false
-  Multithreaded RSX: true
+  Multithreaded RSX: false
   Relaxed ZCULL Sync: false
   3D Display Mode: Disabled
   Debug Program Analyser: false
@@ -112,16 +112,16 @@ Video:
   Resolution Scale: 300
   Anisotropic Filter Override: 0
   Texture LOD Bias Addend: 0
-  Minimum Scalable Dimension: 100
+  Minimum Scalable Dimension: 512
   Shader Compiler Threads: 0
   Driver Recovery Timeout: 1000000
   Driver Wake-Up Delay: 1
-  Vblank Rate: 60
+  Vblank Rate: 120
   Vblank NTSC Fixup: false
   DECR memory layout: false
   Allow Host GPU Labels: false
   Disable MSL Fast Math: false
-  Output Scaling Mode: Nearest
+  Output Scaling Mode: Bilinear
   Vulkan:
     Adapter: NVIDIA GeForce RTX 2060
     Force FIFO present mode: false
@@ -129,7 +129,7 @@ Video:
     Exclusive Fullscreen Mode: Automatic
     Asynchronous Texture Streaming 2: false
     FidelityFX CAS Sharpening Intensity: 50
-    Asynchronous Queue Scheduler: Fast
+    Asynchronous Queue Scheduler: Safe
     VRAM allocation limit (MB): 65536
   Performance Overlay:
     Enabled: false
@@ -169,7 +169,7 @@ Audio:
   Master Volume: 100
   Enable Buffering: true
   Desired Audio Buffer Duration: 100
-  Enable Time Stretching: false
+  Enable Time Stretching: true
   Disable Sampling Skip: false
   Time Stretching Threshold: 75
   Microphone Type: "Null"
@@ -225,11 +225,11 @@ Miscellaneous:
   Start games in fullscreen mode: false
   Prevent display sleep while running games: true
   Show trophy popups: true
-  Show shader compilation hint: false
-  Show PPU compilation hint: false
+  Show shader compilation hint: true
+  Show PPU compilation hint: true
   Use native user interface: true
   GDB Server: 127.0.0.1:2345
-  Silence All Logs: true
+  Silence All Logs: false
   Window Title Format: "FPS: %F | %R | %V | %T [%t]"
   Pause Emulation During Home Menu: false
 Log: {}

@@ -19,12 +19,12 @@ Core:
   SPU delay penalty: 3
   SPU loop detection: false
   Max SPURS Threads: 6
-  SPU Block Size: Mega
+  SPU Block Size: Safe
   Accurate GETLLAR: false
   Accurate SPU DMA: false
   Accurate SPU Reservations: true
   Accurate Cache Line Stores: false
-  Accurate RSX reservation access: true
+  Accurate RSX reservation access: false
   RSX FIFO Accuracy: Atomic
   SPU Verification: true
   SPU Cache: true
@@ -92,7 +92,7 @@ Video:
   Stretch To Display Area: false
   Force High Precision Z buffer: false
   Strict Rendering Mode: false
-  Disable ZCull Occlusion Queries: true
+  Disable ZCull Occlusion Queries: false
   Disable Video Output: false
   Disable Vertex Cache: false
   Disable FIFO Reordering: false
@@ -112,7 +112,7 @@ Video:
   Resolution Scale: 300
   Anisotropic Filter Override: 0
   Texture LOD Bias Addend: 0
-  Minimum Scalable Dimension: 100
+  Minimum Scalable Dimension: 16
   Shader Compiler Threads: 0
   Driver Recovery Timeout: 1000000
   Driver Wake-Up Delay: 1
@@ -121,15 +121,15 @@ Video:
   DECR memory layout: false
   Allow Host GPU Labels: false
   Disable MSL Fast Math: false
-  Output Scaling Mode: Nearest
+  Output Scaling Mode: FidelityFX Super Resolution
   Vulkan:
     Adapter: NVIDIA GeForce RTX 2060
     Force FIFO present mode: false
     Force primitive restart flag: false
     Exclusive Fullscreen Mode: Automatic
-    Asynchronous Texture Streaming 2: false
+    Asynchronous Texture Streaming 2: true
     FidelityFX CAS Sharpening Intensity: 50
-    Asynchronous Queue Scheduler: Fast
+    Asynchronous Queue Scheduler: Safe
     VRAM allocation limit (MB): 65536
   Performance Overlay:
     Enabled: false
@@ -205,13 +205,13 @@ System:
   HDD Model Name: ""
   HDD Serial Number: ""
 Net:
-  Internet enabled: Disconnected
+  Internet enabled: Connected
   IP address: 0.0.0.0
   Bind address: 0.0.0.0
   DNS address: 8.8.8.8
   IP swap list: ""
   UPNP Enabled: false
-  PSN status: Disconnected
+  PSN status: Simulated
 Savestate:
   Start Paused: false
   Suspend Emulation Savestate Mode: false
@@ -229,7 +229,7 @@ Miscellaneous:
   Show PPU compilation hint: false
   Use native user interface: true
   GDB Server: 127.0.0.1:2345
-  Silence All Logs: true
+  Silence All Logs: false
   Window Title Format: "FPS: %F | %R | %V | %T [%t]"
   Pause Emulation During Home Menu: false
 Log: {}
