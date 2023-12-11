@@ -5,7 +5,7 @@ Core:
   PPU Calling History: false
   Save LLVM logs: false
   Use LLVM CPU: ""
-  Max LLVM Compile Threads: 0
+  Max LLVM Compile Threads: 3
   PPU LLVM Greedy Mode: false
   LLVM Precompilation: true
   Thread Scheduler Mode: Operating System
@@ -15,17 +15,17 @@ Core:
   SPU GETLLAR Busy Waiting Percentage: 100
   SPU Debug: false
   MFC Debug: false
-  Preferred SPU Threads: 0
+  Preferred SPU Threads: 4
   SPU delay penalty: 3
-  SPU loop detection: true
-  Max SPURS Threads: 6
-  SPU Block Size: Safe
+  SPU loop detection: false
+  Max SPURS Threads: 4
+  SPU Block Size: Mega
   Accurate GETLLAR: false
   Accurate SPU DMA: false
   Accurate SPU Reservations: true
   Accurate Cache Line Stores: false
-  Accurate RSX reservation access: true
-  RSX FIFO Accuracy: Atomic
+  Accurate RSX reservation access: false
+  RSX FIFO Accuracy: "Ordered & Atomic"
   SPU Verification: true
   SPU Cache: true
   SPU Profiler: false
@@ -47,7 +47,7 @@ Core:
   Debug Console Mode: false
   Hook static functions: false
   Libraries Control:
-    []
+    - libvdec.sprx:lle
   HLE lwmutex: false
   SPU LLVM Lower Bound: 0
   SPU LLVM Upper Bound: 18446744073709551615
@@ -61,7 +61,7 @@ Core:
   Sleep Timers Accuracy: As Host
   Usleep Time Addend: 0
   Performance Report Threshold: 500
-  Enable Performance Report: false
+  Enable Performance Report: true
   Assume External Debugger: false
 VFS:
   Enable /host_root/: false
@@ -73,18 +73,18 @@ Video:
   Renderer: Vulkan
   Resolution: 1280x720
   Aspect ratio: 16:9
-  Frame limit: Auto
+  Frame limit: PS3 Native
   Second Frame Limit: 0
   MSAA: Auto
-  Shader Mode: Async Shader Recompiler
-  Shader Precision: Ultra
+  Shader Mode: Async with Shader Interpreter
+  Shader Precision: Auto
   Write Color Buffers: true
-  Write Depth Buffer: true
-  Read Color Buffers: false
+  Write Depth Buffer: false
+  Read Color Buffers: true
   Read Depth Buffer: false
-  Handle RSX Memory Tiling: false
+  Handle RSX Memory Tiling: true
   Log shader programs: false
-  VSync: true
+  VSync: false
   Debug output: false
   Debug overlay: false
   Renderdoc Compatibility Mode: false
@@ -103,21 +103,21 @@ Video:
   Use full RGB output range: true
   Strict Texture Flushing: false
   Multithreaded RSX: true
-  Relaxed ZCULL Sync: false
+  Relaxed ZCULL Sync: true
   3D Display Mode: Disabled
   Debug Program Analyser: false
-  Accurate ZCULL stats: true
+  Accurate ZCULL stats: false
   Consecutive Frames To Draw: 1
   Consecutive Frames To Skip: 1
-  Resolution Scale: 300
+  Resolution Scale: 100
   Anisotropic Filter Override: 0
   Texture LOD Bias Addend: 0
-  Minimum Scalable Dimension: 512
-  Shader Compiler Threads: 0
+  Minimum Scalable Dimension: 32
+  Shader Compiler Threads: 2
   Driver Recovery Timeout: 1000000
-  Driver Wake-Up Delay: 1
+  Driver Wake-Up Delay: 200
   Vblank Rate: 1800
-  Vblank NTSC Fixup: true
+  Vblank NTSC Fixup: false
   DECR memory layout: false
   Allow Host GPU Labels: false
   Disable MSL Fast Math: false
@@ -127,7 +127,7 @@ Video:
     Force FIFO present mode: false
     Force primitive restart flag: false
     Exclusive Fullscreen Mode: Automatic
-    Asynchronous Texture Streaming 2: true
+    Asynchronous Texture Streaming 2: false
     FidelityFX CAS Sharpening Intensity: 50
     Asynchronous Queue Scheduler: Safe
     VRAM allocation limit (MB): 65536
@@ -168,8 +168,8 @@ Audio:
   Audio Device: "@@@default@@@"
   Master Volume: 100
   Enable Buffering: true
-  Desired Audio Buffer Duration: 100
-  Enable Time Stretching: false
+  Desired Audio Buffer Duration: 150
+  Enable Time Stretching: true
   Disable Sampling Skip: false
   Time Stretching Threshold: 75
   Microphone Type: "Null"
@@ -196,8 +196,8 @@ Input/Output:
   Load SDL GameController Mappings: true
 System:
   License Area: SCEA
-  Language: English (US)
-  Keyboard Type: English keyboard (US standard)
+  Language: Portuguese (Brazil)
+  Keyboard Type: Portuguese keyboard (Brazil)
   Enter button assignment: Enter with cross
   Console time offset (s): 0
   PSID high: 0
@@ -215,6 +215,7 @@ Net:
 Savestate:
   Start Paused: false
   Suspend Emulation Savestate Mode: false
+  Compatible Savestate Mode: false
   Inspection Mode Savestates: false
   Save Disc Game Data: false
 Miscellaneous:
@@ -223,9 +224,9 @@ Miscellaneous:
   Pause emulation on RPCS3 focus loss: false
   Start games in fullscreen mode: false
   Prevent display sleep while running games: true
-  Show trophy popups: true
+  Show trophy popups: false
   Show shader compilation hint: false
-  Show PPU compilation hint: true
+  Show PPU compilation hint: false
   Use native user interface: true
   GDB Server: 127.0.0.1:2345
   Silence All Logs: false

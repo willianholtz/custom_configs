@@ -15,11 +15,11 @@ Core:
   SPU GETLLAR Busy Waiting Percentage: 100
   SPU Debug: false
   MFC Debug: false
-  Preferred SPU Threads: 4
+  Preferred SPU Threads: 0
   SPU delay penalty: 3
-  SPU loop detection: true
+  SPU loop detection: false
   Max SPURS Threads: 6
-  SPU Block Size: Mega
+  SPU Block Size: Safe
   Accurate GETLLAR: false
   Accurate SPU DMA: false
   Accurate SPU Reservations: true
@@ -76,7 +76,7 @@ Video:
   Frame limit: Auto
   Second Frame Limit: 0
   MSAA: Auto
-  Shader Mode: Async with Shader Interpreter
+  Shader Mode: Async Shader Recompiler
   Shader Precision: High
   Write Color Buffers: false
   Write Depth Buffer: false
@@ -109,14 +109,14 @@ Video:
   Accurate ZCULL stats: true
   Consecutive Frames To Draw: 1
   Consecutive Frames To Skip: 1
-  Resolution Scale: 200
+  Resolution Scale: 100
   Anisotropic Filter Override: 0
   Texture LOD Bias Addend: 0
-  Minimum Scalable Dimension: 512
+  Minimum Scalable Dimension: 16
   Shader Compiler Threads: 0
   Driver Recovery Timeout: 1000000
   Driver Wake-Up Delay: 1
-  Vblank Rate: 120
+  Vblank Rate: 60
   Vblank NTSC Fixup: false
   DECR memory layout: false
   Allow Host GPU Labels: false
@@ -169,7 +169,7 @@ Audio:
   Master Volume: 100
   Enable Buffering: true
   Desired Audio Buffer Duration: 100
-  Enable Time Stretching: true
+  Enable Time Stretching: false
   Disable Sampling Skip: false
   Time Stretching Threshold: 75
   Microphone Type: "Null"

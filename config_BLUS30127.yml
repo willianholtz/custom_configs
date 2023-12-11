@@ -5,7 +5,7 @@ Core:
   PPU Calling History: false
   Save LLVM logs: false
   Use LLVM CPU: ""
-  Max LLVM Compile Threads: 0
+  Max LLVM Compile Threads: 3
   PPU LLVM Greedy Mode: false
   LLVM Precompilation: true
   Thread Scheduler Mode: Operating System
@@ -15,17 +15,17 @@ Core:
   SPU GETLLAR Busy Waiting Percentage: 100
   SPU Debug: false
   MFC Debug: false
-  Preferred SPU Threads: 4
+  Preferred SPU Threads: 2
   SPU delay penalty: 3
-  SPU loop detection: true
-  Max SPURS Threads: 6
+  SPU loop detection: false
+  Max SPURS Threads: 4
   SPU Block Size: Mega
   Accurate GETLLAR: false
   Accurate SPU DMA: false
   Accurate SPU Reservations: true
   Accurate Cache Line Stores: false
   Accurate RSX reservation access: false
-  RSX FIFO Accuracy: Fast
+  RSX FIFO Accuracy: Atomic
   SPU Verification: true
   SPU Cache: true
   SPU Profiler: false
@@ -33,7 +33,7 @@ Core:
   MFC Commands Timeout: 0
   MFC Commands Shuffling In Steps: false
   Enable TSX: Disabled
-  XFloat Accuracy: Approximate
+  XFloat Accuracy: Accurate
   Accurate PPU 128-byte Reservation Op Max Length: 0
   Stub PPU Traps: 0
   Full Width AVX-512: true
@@ -61,7 +61,7 @@ Core:
   Sleep Timers Accuracy: As Host
   Usleep Time Addend: 0
   Performance Report Threshold: 500
-  Enable Performance Report: false
+  Enable Performance Report: true
   Assume External Debugger: false
 VFS:
   Enable /host_root/: false
@@ -77,8 +77,8 @@ Video:
   Second Frame Limit: 0
   MSAA: Auto
   Shader Mode: Async with Shader Interpreter
-  Shader Precision: High
-  Write Color Buffers: false
+  Shader Precision: Auto
+  Write Color Buffers: true
   Write Depth Buffer: false
   Read Color Buffers: false
   Read Depth Buffer: false
@@ -102,21 +102,21 @@ Video:
   Disable Vulkan Memory Allocator: false
   Use full RGB output range: true
   Strict Texture Flushing: false
-  Multithreaded RSX: false
-  Relaxed ZCULL Sync: false
+  Multithreaded RSX: true
+  Relaxed ZCULL Sync: true
   3D Display Mode: Disabled
   Debug Program Analyser: false
-  Accurate ZCULL stats: true
+  Accurate ZCULL stats: false
   Consecutive Frames To Draw: 1
   Consecutive Frames To Skip: 1
-  Resolution Scale: 200
+  Resolution Scale: 300
   Anisotropic Filter Override: 0
   Texture LOD Bias Addend: 0
-  Minimum Scalable Dimension: 512
-  Shader Compiler Threads: 0
+  Minimum Scalable Dimension: 256
+  Shader Compiler Threads: 6
   Driver Recovery Timeout: 1000000
   Driver Wake-Up Delay: 1
-  Vblank Rate: 120
+  Vblank Rate: 60
   Vblank NTSC Fixup: false
   DECR memory layout: false
   Allow Host GPU Labels: false
@@ -127,17 +127,17 @@ Video:
     Force FIFO present mode: false
     Force primitive restart flag: false
     Exclusive Fullscreen Mode: Automatic
-    Asynchronous Texture Streaming 2: false
+    Asynchronous Texture Streaming 2: true
     FidelityFX CAS Sharpening Intensity: 50
     Asynchronous Queue Scheduler: Safe
     VRAM allocation limit (MB): 65536
   Performance Overlay:
     Enabled: false
-    Enable Framerate Graph: false
-    Enable Frametime Graph: false
+    Enable Framerate Graph: true
+    Enable Frametime Graph: true
     Framerate datapoints: 50
     Frametime datapoints: 170
-    Detail level: Medium
+    Detail level: High
     Framerate graph detail level: All
     Frametime graph detail level: All
     Metrics update interval (ms): 350
@@ -168,7 +168,7 @@ Audio:
   Audio Device: "@@@default@@@"
   Master Volume: 100
   Enable Buffering: true
-  Desired Audio Buffer Duration: 100
+  Desired Audio Buffer Duration: 150
   Enable Time Stretching: true
   Disable Sampling Skip: false
   Time Stretching Threshold: 75
@@ -196,8 +196,8 @@ Input/Output:
   Load SDL GameController Mappings: true
 System:
   License Area: SCEA
-  Language: English (US)
-  Keyboard Type: English keyboard (US standard)
+  Language: Portuguese (Brazil)
+  Keyboard Type: Portuguese keyboard (Brazil)
   Enter button assignment: Enter with cross
   Console time offset (s): 0
   PSID high: 0
@@ -224,9 +224,9 @@ Miscellaneous:
   Pause emulation on RPCS3 focus loss: false
   Start games in fullscreen mode: false
   Prevent display sleep while running games: true
-  Show trophy popups: true
-  Show shader compilation hint: true
-  Show PPU compilation hint: true
+  Show trophy popups: false
+  Show shader compilation hint: false
+  Show PPU compilation hint: false
   Use native user interface: true
   GDB Server: 127.0.0.1:2345
   Silence All Logs: false
